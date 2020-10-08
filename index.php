@@ -8,7 +8,6 @@
 
     //DATATYPES:
     //Strings, integers, floats, bool, arrays, objects, null, resource
-
     //String concat -> using .''.
     $string1 = 'asd';
     $string2 = 'ddasd';
@@ -19,7 +18,6 @@
     //Constants
     define('HELLO' , 'asasd'."<br>",false);
     echo HELLO;
-
     // ARRAYS: 
     // Indexed, Associative, Multidim
 
@@ -55,7 +53,9 @@
         ]
     ];
     print_r($people1);// ( [0] => Array ( [0] => 1 [1] => 2 [2] => 3 ) [1] => Array ( [0] => 4 [1] => 5 [2] => 6 ) )
-    //Better format:
+    
+    
+    //Better format: -->
     
     $cars = array(
         array('Mercedes',20,10),
@@ -143,7 +143,7 @@
 
     echo array_search("value6",$someArray)."<br>"; //Return boolean value false and prints nothing
 
-    if(!array_search("value6",$someArray)){
+    if(!array_search("value6",$someArray)){ 
         echo 'Element not found'."<br>";
     }
 
@@ -165,6 +165,22 @@
         default:
             echo 'Sth else'."<br>";
     }
+    
+    // Dates & Timestamps
+
+    echo date('d/m/Y')."<br>";//08/10/2020
+
+    echo date('h:i:s a')."<br>";//04:09:37 pm
+    
+    echo date_default_timezone_get();//Europe/Berlin
+
+    //Timestamps
+    $timestamp = strtotime('tomorrow');
+    echo "<br>".date('d/m/Y h:i:sa',$timestamp);//09/10/2020 12:00:00am
+
+
+    
+    //OOP in PHP
     
     class Person {
         public $name1 = 'Filip';
