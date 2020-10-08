@@ -147,7 +147,24 @@
         echo 'Element not found'."<br>";
     }
 
-    echo array_search("value2",$someArray);
+    echo array_search("value2",$someArray)."<br>";
+
+    //SWITCH
+
+    $myColor = 'black';
+
+    switch($myColor){
+        case 'red':
+            echo 'Red'."<br>";
+        break;
+        
+        case 'blue':
+            echo 'Blue'."<br>";
+        break;
+        
+        default:
+            echo 'Sth else'."<br>";
+    }
     
     class Person {
         public $name1 = 'Filip';
@@ -169,4 +186,5 @@
     $person->sayName();
     echo $person->name2;
     
+
     
