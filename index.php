@@ -150,7 +150,6 @@
     echo array_search("value2",$someArray)."<br>";
 
     //SWITCH
-
     $myColor = 'black';
 
     switch($myColor){
@@ -178,7 +177,11 @@
     $timestamp = strtotime('tomorrow');
     echo "<br>".date('d/m/Y h:i:sa',$timestamp);//09/10/2020 12:00:00am
 
-
+    //SuperGlobals
+    //Superglobals are built-in variables that are always available in all scopes
+    //Predefined: $GLOBALS, $_SERVER, $_GET, $_POST, $_FILES, $_COOKIE, $_SESSION, $_REQUEST, $_ENV
+    //For any other we use global keyword
+    global $data; //Global variable defined
     
     //OOP in PHP
     
