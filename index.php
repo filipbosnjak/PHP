@@ -181,29 +181,41 @@
     //Superglobals are built-in variables that are always available in all scopes
     //Predefined: $GLOBALS, $_SERVER, $_GET, $_POST, $_FILES, $_COOKIE, $_SESSION, $_REQUEST, $_ENV
     //For any other we use global keyword
-    global $data; //Global variable defined
     
     //OOP in PHP
     
     class Person {
-        public $name1 = 'Filip';
-        private $name2 = 'Bošnjak';
-        protected $name3 = 'Protected';
-        
+        public $name1;
+        private $name2 = 'Bošnjak';//Can be accessed only inside of this class
+        protected $name3 = 'Protected';//Can be accessed only inside of this class and any class that extends this class
+
+        //Constructor
+        function __construct($name1,$name2){
+            $this->name1 = $name1;
+            $this->name2 = $name2;
+        }
+        function __destruct(){//This class now becomes destructable. destruct() method is being executed at the end of the script. It releases memory that have been used by the object
+            echo "Destroying ".__CLASS__."<br>";
+        }
         public function sayName(){
-            echo "<br>".$this->name1;
+            echo "<br>".$this->name1." ";
+        }
+        public static function sayHello(){//Static methods can be used without object instatiation
+            echo "<br>".'Hello';
         }
     }
+    
     class PersonExtension extends Person{
         public $name2 = 'Bla';
         public function sayName(){
-            echo "<br>".$this->name3;
+            echo "<br>".$this->name3;//We can access protected variable $name3 from here although it is protected
         }
     }
-
-    $person = new PersonExtension();
+    
+    $person = new Person('Filip','Bošnjak');
     $person->sayName();
-    echo $person->name2;
+    //echo $person->name2;//Fatal error
+    Person::sayHello();
     
 
     
