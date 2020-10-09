@@ -47,7 +47,7 @@
         </div>
         <input type="submit" value="Submit">
 
-        <a href="post_get.php?name=Filip">Filip</a>
+        <a href="post_get.php?name=Filip">Filip</a><!-- Like this we send query strings un the url itself-->
         <a href="post_get.php?name=John">John</a>
         <h1><?php echo "$name's Profile";?></h1>
 

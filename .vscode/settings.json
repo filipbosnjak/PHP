@@ -10,7 +10,7 @@
   "editor.snippetSuggestions": "top",
   "files.associations": {
     "*.js": "javascriptreact",
-    "*.php": "php"
+    "*.php": "objective-cpp"
   },
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": null,

@@ -195,13 +195,13 @@
             $this->name2 = $name2;
         }
         function __destruct(){//This class now becomes destructable. destruct() method is being executed at the end of the script. It releases memory that have been used by the object
-            echo "Destroying ".__CLASS__."<br>";
+            echo "<br>Destroying ".__CLASS__."<br>";
         }
         public function sayName(){
             echo "<br>".$this->name1." ";
         }
         public static function sayHello(){//Static methods can be used without object instatiation
-            echo "<br>".'Hello';
+            echo "<br>".'Hello'."<br>";
         }
     }
     
@@ -216,6 +216,35 @@
     $person->sayName();
     //echo $person->name2;//Fatal error
     Person::sayHello();
+
     
+    
+    //STRING FUNCTIONS
+
+    $str1 = 'Str1';
+    $str2 = 'Str2';
+    //echo $str1 + $str2."<br>"; //Warning: A non-numeric value encountered in - not working
+    $myString  = 'asfnasdnsndgnsdfghdshsdnfh'."<br>";
+    echo substr($myString,-6);//Returns contactinated <br> too
+    echo strlen($myString)."<br>";
+    echo strpos($myString,'f')."<br>"; //Searches for specified string and returns its position
+    //trim($string) -> trims all whitespaces on the beginnign/end
+    //strtoupper(), strtolower() - to uppercase/lowercase
+    echo ucwords('hello world')."<br>";//Hello World
+    $myString = 'ABC ABB ABC ABD ABB ABE';
+    echo str_replace('ABB' , 'XYZ' , $myString)."<br>"; //Replace all abb with xyz in a string $myString
+    //is_string() return 1 or 0 if value in () is string or not
+    $abcde = 'abcdefghijklmno...';
+    echo gzcompress($abcde)."<br>";//x�KLJNIMK�����������C�
+    //gzuncompress(); return compressed string value to original
+
+    //Ternary operator 
+    
+    $bool = true; 
+    
+    echo ($bool) ? 'True' : 'False';
+
+
+    //Filters
 
     
