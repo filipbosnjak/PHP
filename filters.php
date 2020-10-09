@@ -8,8 +8,13 @@ if(filter_has_var(INPUT_POST,'data')){
 */
 //We can check if email is valid i.e. if it is typed in correct format. Using FILTER_VALIDATE_EMAIL
 
+
 if(filter_has_var(INPUT_POST,'data')){
-    if(!filter_input(INPUT_POST,'data',FILTER_VALIDATE_EMAIL)){
+    
+    //Cleaning up email of the forbidden chars
+    $email  = filter_var($_POST['data'],FILTER_SANITIZE_EMAIL);//Like this we remove all forbidden chars
+    echo $email."<br>";
+    if(!filter_var/*_input*/(/*INPUT_POST,'data'*/$email,FILTER_VALIDATE_EMAIL)){
         echo 'Email invalid';
     }else{
         echo 'Success';
